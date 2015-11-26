@@ -1,0 +1,18 @@
+namespace SafariBooks_Employee.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class v : DbMigration
+    {
+        public override void Up()
+        {
+            AddColumn("dbo.Books", "Reviews", c => c.String());
+        }
+        
+        public override void Down()
+        {
+            DropColumn("dbo.Books", "Reviews");
+        }
+    }
+}

@@ -1,0 +1,57 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace SafariBooks_Employee.Models
+{
+    public class ManageCustomers
+    {
+        [Key]
+        [Required]
+        [Display(Name = "Email")]
+        public string CustomerEmail { get; set; }
+
+        [Required]
+        [Display(Name = "First Name")]
+        public string FName { get; set; }
+
+        [Display(Name = "Middle Initial")]
+        public string MI { get; set; }
+
+        [Required]
+        public string LName { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "the {0} must be at least {2} characters")]
+        [DataType(DataType.Password)]
+        [Display(Name = "Password")]
+        public string Password { get; set; }
+
+        [Required]
+        public string Phone { get; set; }
+
+        [Required]
+        public string StreetAddress { get; set; }
+
+        [Required]
+        public string Zip { get; set; }
+
+        [Required]
+        public string CreditCard1 { get; set; }
+
+        public string CreditCard1Type { get; set; }
+
+        public string CreditCard2 { get; set; }
+
+        public string CreditCard2Type { get; set; }
+
+        public bool CustomerActive { get; set; }
+
+       public virtual List<ManageCustomers> Customers { get; set; }
+
+
+    }
+}
